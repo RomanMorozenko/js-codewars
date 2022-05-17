@@ -1,6 +1,7 @@
 // Hello friends! 
 
-// Don't give me five!
+//      Don't give me five!
+
 // In this kata you get the start number and the end number of a region and should return the count of all numbers except numbers with a 5 in it. The start and the end number are both inclusive!
 
 // Examples:
@@ -28,3 +29,33 @@ function dontGiveMeFive(start, end)
     return count;
 }
 
+
+
+//      Vowel Count.
+
+// Return the number (count) of vowels in the given string.
+
+// We will consider a, e, i, o, u as vowels for this Kata (but not y).
+
+// The input string will only consist of lower case letters and/or spaces.
+
+function getCount(str) {
+    let vowelsCount = 0;
+    const arr = str.split('')
+    for (let i = 0; i < arr.length; i++) {
+        switch (arr[i]){
+            case 'a': 
+            case 'e': 
+            case 'i': 
+            case 'o': 
+            case 'u': 
+            vowelsCount++;
+            break;
+        }
+    }
+    return vowelsCount;
+  }
+
+  // try to solve with regex
+
+  
