@@ -177,3 +177,30 @@ function getVillainName(birthday){
     return `The ${m[month]} ${ date.length > 1 ? d[date[1]] : d[date] }`
   }
 
+
+
+//          Numerology
+
+// In numerology, every number has a certain meaning that expresses someones connection to the universe! This single digit integer can be calculated by adding up every digit in the birthdate: year, month, and date.
+
+// Task
+// Calculate the single integer digit by adding up every digit in the birthdate: month, date, full year, from left to right (MMDDYYYY). If the sum is greater or equal to 10, add up the two digits of the sum.
+
+// You will be passed in a Date object corresponding to your language.
+
+
+function solution(date){
+
+    let newDate = new Date(date);
+    let dateString = `${newDate.getDate()}${newDate.getMonth()+1}${newDate.getFullYear()}`
+    let sum = 0;
+    
+    for (let element of dateString) {
+        sum += +element;
+        if (sum.toString().length > 1) {
+            sum = (+sum.toString()[0]) + (+sum.toString()[1])
+        }
+    }
+
+    return sum
+}
