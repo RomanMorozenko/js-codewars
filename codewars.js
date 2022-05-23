@@ -194,7 +194,7 @@ function solution(date){
     let newDate = new Date(date);
     let dateString = `${newDate.getDate()}${newDate.getMonth()+1}${newDate.getFullYear()}`
     let sum = 0;
-    
+
     for (let element of dateString) {
         sum += +element;
         if (sum.toString().length > 1) {
@@ -204,3 +204,5 @@ function solution(date){
 
     return sum
 }
+
+
