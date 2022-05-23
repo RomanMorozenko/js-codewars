@@ -225,3 +225,41 @@ function mygcd(x,y){
 
   return divisors[divisors.length-1]
 }
+
+
+//  Currying functions: multiply all elements in an array
+
+// To complete this Kata you need to make a function multiplyAll/multiply_all which takes an array of integers as an argument. This function must return another function, which takes a single integer as an argument and returns a new array.
+
+// The returned array should consist of each of the elements from the first array multiplied by the integer.
+
+// Example:
+
+// multiplyAll([1, 2, 3])(2) = [2, 4, 6];
+// You must not mutate the original array.
+
+function multiplyAll(arr){
+  let initArray = arr;
+  return function(n) {
+      return initArray.map(item=> item*n)
+  }
+}
+
+
+// Create a function runningAverage() that returns a callable function object. Update the series with each given value and calculate the current average.
+
+// rAvg = runningAverage();
+// rAvg(10) = 10.0;
+// rAvg(11) = 10.5;
+// rAvg(12) = 11;
+
+
+function runningAverage(){
+  let storage = 0;
+  let calls = 0;
+  return function(n) {
+      storage+=n;
+      calls++;
+      return storage/calls
+  }
+}
